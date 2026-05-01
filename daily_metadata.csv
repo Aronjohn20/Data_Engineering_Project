@@ -1,0 +1,2 @@
+source_file,rows,columns,load_time
+daily_data.csv,1,"['date', 'weather_code']",2026-05-01 18:03:09

@@ -1,0 +1,2 @@
+source_file,rows,columns,load_time
+hourly_data.csv,24,"['date', 'temperature_2m', 'relative_humidity_2m', 'precipitation', 'precipitation_probability']",2026-05-01 18:03:09
