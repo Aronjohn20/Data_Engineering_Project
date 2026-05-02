@@ -1,10 +1,9 @@
 import pandas as pd
 
-# Load the hourly and daily data from CSV files
+
 hourly_dataframe = pd.read_csv("hourly_data.csv")
 daily_dataframe = pd.read_csv("daily_data.csv")
 
-# Convert date columns from string to datetime
 date_columns = ["date"]
 for df in [hourly_dataframe, daily_dataframe]:
     for date_col in date_columns:
@@ -31,14 +30,13 @@ print("Hourly metadata:", hourly_dataframe.attrs["metadata"])
 print("Daily metadata:", daily_dataframe.attrs["metadata"])
 print(hourly_dataframe.dtypes)
 
-# Export metadata to CSV
 hourly_metadata_df = pd.DataFrame([hourly_dataframe.attrs["metadata"]])
 daily_metadata_df = pd.DataFrame([daily_dataframe.attrs["metadata"]])
 hourly_metadata_df.to_csv("hourly_metadata.csv", index=False)
 daily_metadata_df.to_csv("daily_metadata.csv", index=False)
 print("\nMetadata exported to hourly_metadata.csv and daily_metadata.csv")
 
-# Export cleaned data to CSV for further processing
+
 hourly_dataframe.to_csv("hourly_data_cleaned.csv", index=False)
 daily_dataframe.to_csv("daily_data_cleaned.csv", index=False)
 print("Cleaned data exported to hourly_data_cleaned.csv and daily_data_cleaned.csv")
